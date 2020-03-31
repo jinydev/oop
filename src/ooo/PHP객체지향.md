@@ -1,3 +1,9 @@
+---
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
+---
+
 PHP는 클래스 기반의 언어로 객체지향 개발 방법을 제공합니다.
 
 

@@ -1,4 +1,8 @@
-PHP패턴 02. SOLID Pattern
+---
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
+---
 
 02. SOLID 패턴
 ====================

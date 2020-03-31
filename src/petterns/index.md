@@ -1,3 +1,8 @@
+---
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
+---
 # 디자인패턴
 
 ### 01.1.1 유래

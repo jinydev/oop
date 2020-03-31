@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>JinyDev | 객체지향 프로그래밍</title>
+            <meta name="title" content="객체지향 프로그래밍" /><meta name="keyword" content="jinyphp, php, 객체지향, oop, class" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">JinyDev</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/php">PHP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mysql.jiny.dev">Mysql</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://git.jiny.dev">Git</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav><br>
+
+<div class="container">
+    <nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--></ol>    
+</nav></nav>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h1 id="가시성visibility">가시성(visibility)</h1>
+
+<h1 id="143-접근-권한-속성">14.3 접근 권한 속성</h1>
+<p>클래스와 같이 객체지향 프로그램에서속성이라는 추가적인 접근 권한 개념이 도입됩니다. 접근 권한 속성은 각각의 클래스의 독립성과 보호를위해서 프로퍼티(변수)나 메서드(함수) 등에 권한을 설정하는 것입니다.</p>
+
+<p>PHP 클래스에서는 세 가지의 속성을 가지고 있습니다. public, protected, private를 제공합니다.</p>
+
+<p>속성은 클래스 외부에서의 접근을제한하고자 할 때 사용할 수 있습니다.</p>
+
+<p>접근 속성의 종류</p>
+
+<p>PHP 클래스에서는 프로퍼티 변수의 속성에 대해서 세 가지 타입을 지원합니다.</p>
+
+<ul>
+  <li>
+    <p>public:  public으로설정된 프로퍼티 변수는 외부에서 접근이 가능합니다. 즉, 값을읽거나 새로운 값으로 설정이 가능합니다.</p>
+  </li>
+  <li>
+    <p>protected:정의한 클래스와 상속한 클래스에서만 사용이 가능합니다. 이 속성은 클래스 내의 메서드와 서브 클래스에서만 접근하여 사용할 수 있습니다. 외부에서 접근할 수는 없지만 상속을 받은 경우에는 접근이 가능합니다.</p>
+  </li>
+  <li>
+    <p>private:정의한 클래스 내에서만 사용 가능합니다. 이 속성은 같은 클래스 내에서만 참조가 가능합니다. protectd와달리 서브 클래스에서는 사용할 수 없습니다</p>
+  </li>
+</ul>
+
+<p>UML
+<code class="language-html highlighter-rouge">+</code>는 공개맴버
+<code class="language-html highlighter-rouge">-</code>는 프라이빗 맴버, 비공개 맴버라고 합니다.
+<code class="language-html highlighter-rouge">#</code> protected 맴버</p>
+
+<p>객체지향 언어에는 기본적으로 <code class="language-html highlighter-rouge">private</code>이나 PHP에서는 기본적으로 <code class="language-html highlighter-rouge">public</code>입니다.</p>
+
+<p>속성은 프로퍼티, 메소드 모두 각각이 앞에 선언을 해주어야 합니다.
+그룹으로 지정하여 지정을 할 수 없습니다.</p>
+
+<h3 id="공개벰버와-비공개-멤버">공개벰버와 비공개 멤버</h3>
+<hr />
+
+<h3 id="속성">속성</h3>
+<hr />
+<p>공개 맴버변수의 경우 오류 입력이 되어도 방지를 할 수 없습니다.
+보호하기 위해서는 private로 사용후에 getter/setter를 이용하는 방법입니다.</p>
+
+<h1 id="접근-권한-속성">접근 권한 속성</h1>
+<p>클래스와 같이 객체지향 프로그램에서속성이라는 추가적인 접근 권한 개념이 도입됩니다. 접근 권한 속성은 각각의 클래스의 독립성과 보호를위해서 프로퍼티(변수)나 메서드(함수) 등에 권한을 설정하는 것입니다.</p>
+
+<p>PHP 클래스에서는 세 가지의 속성을 가지고 있습니다. public, protected, private를 제공합니다.</p>
+
+<p>속성은 클래스 외부에서의 접근을제한하고자 할 때 사용할 수 있습니다.</p>
+
+<p>접근 속성의 종류</p>
+
+<p>PHP 클래스에서는 프로퍼티 변수의 속성에 대해서 세 가지 타입을 지원합니다.</p>
+
+<ul>
+  <li>
+    <p>public:  public으로설정된 프로퍼티 변수는 외부에서 접근이 가능합니다. 즉, 값을읽거나 새로운 값으로 설정이 가능합니다.</p>
+  </li>
+  <li>
+    <p>protected:정의한 클래스와 상속한 클래스에서만 사용이 가능합니다. 이 속성은 클래스 내의 메서드와 서브 클래스에서만 접근하여 사용할 수 있습니다. 외부에서 접근할 수는 없지만 상속을 받은 경우에는 접근이 가능합니다.</p>
+  </li>
+  <li>
+    <p>private:정의한 클래스 내에서만 사용 가능합니다. 이 속성은 같은 클래스 내에서만 참조가 가능합니다. protectd와달리 서브 클래스에서는 사용할 수 없습니다</p>
+  </li>
+</ul>
+
+<p>UML
+<code class="language-html highlighter-rouge">+</code>는 공개맴버
+<code class="language-html highlighter-rouge">-</code>는 프라이빗 맴버, 비공개 맴버라고 합니다.
+<code class="language-html highlighter-rouge">#</code> protected 맴버</p>
+
+<p>객체지향 언어에는 기본적으로 <code class="language-html highlighter-rouge">private</code>이나 PHP에서는 기본적으로 <code class="language-html highlighter-rouge">public</code>입니다.</p>
+
+<p>속성은 프로퍼티, 메소드 모두 각각이 앞에 선언을 해주어야 합니다.
+그룹으로 지정하여 지정을 할 수 없습니다.</p>
+
+<h3 id="공개벰버와-비공개-멤버-1">공개벰버와 비공개 멤버</h3>
+<hr />
+
+<h3 id="속성-1">속성</h3>
+<hr />
+<p>공개 맴버변수의 경우 오류 입력이 되어도 방지를 할 수 없습니다.
+보호하기 위해서는 private로 사용후에 getter/setter를 이용하는 방법입니다.</p>
+
+            </section>            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><ul class="list-group">
+    <li class="list-group-item"><a href="/object">객체지향</a></li>
+    <li class="list-group-item"><a href="/class">클래스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/pattern">디자인패턴</a></li>
+    <li class="list-group-item">리팩토링</li>
+</ul>
+
+<br>
+</aside>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        <footer>  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer></footer>  
+        
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160048106-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-160048106-1');
+        </script>
+
+    </body>
+
+</html>

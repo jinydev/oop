@@ -1,3 +1,9 @@
+---
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
+---
+
 16 추상화
 
 객체지향 개발에서 추상화 개념은 매우 중요하다. 

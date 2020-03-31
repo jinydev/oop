@@ -1,3 +1,9 @@
+---
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
+---
+
 컴퓨터 프로그램을 설계 및 작성하는 방법은 다양합니다. 
 
 그중, 객체지향(object orient programming)은 프로그램밍 패러다임의 하나 입니다.

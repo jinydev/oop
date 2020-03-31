@@ -1,3 +1,8 @@
+---
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
+---
 ### 메시지(message)
 ---
 

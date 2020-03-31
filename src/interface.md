@@ -1,9 +1,7 @@
 ---
-layout: default
-title: Interface
-subtitle: "patterns"
-
-tree: /php
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
 ---
 
 디자인 패턴을 학습하기 먼저, PHP의 인터페이스 기능에 대해서 다시 한번 복습해보도록 하겠습니다. 객체지향 디자인패턴을 학습을 하기 위해서는 기본적인 PHP코드를 잘 숙지하고 있어야 합니다.

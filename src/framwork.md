@@ -1,3 +1,8 @@
+---
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
+---
 ## 프레임워크
 
 라이브러리, 프레임워크 모두 코드의 집합체 입니다.

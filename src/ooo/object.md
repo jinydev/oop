@@ -1,4 +1,8 @@
-PHP 4권 – 객체 디자인
+---
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
+---
 
 03. 객체 디자인
 ====================

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>JinyDev | 객체지향 프로그래밍</title>
+            <meta name="title" content="객체지향 프로그래밍" /><meta name="keyword" content="jinyphp, php, 객체지향, oop, class" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">JinyDev</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/php">PHP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mysql.jiny.dev">Mysql</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://git.jiny.dev">Git</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav><br>
+
+<div class="container">
+    <nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--></ol>    
+</nav></nav>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h3 id="일반화-generalization">일반화 (generalization)</h3>
+<hr />
+
+<p>일반화와 특수화(specialization))가 있습니다.
+일반화는 개념에서 공통적인 개념을 찾아 정의하는 관계를 말합니다.</p>
+
+<p>일반화의 관계는 <code class="language-html highlighter-rouge">A는 B의 일종이다</code> 와 같은 관계를 말합니다.</p>
+
+<p><br /></p>
+
+<h3 id="상속성-inheritance">상속성 (inheritance)</h3>
+<hr />
+<p>일반적인 것을 상위에
+특수한 개념을 하위 두는 방식을 상속성이라고 할 수 있습니다.</p>
+
+<p>상속성을 통하여 객체의 계층성이 발생이 됩니다.</p>
+
+<p>상속을 통하여 코드를 재사용 할 수 있습니다.</p>
+
+<p>확장을 통하여 기존의 클래스에 새로운 기능을 추가 할 수 있습니다.</p>
+
+<p>상속은 크게 <code class="language-html highlighter-rouge">구현상속</code>과 <code class="language-html highlighter-rouge">인터페이스 상속</code>으로 구분을 할 수 있습니다.</p>
+
+<p>접근
+상속을 받게 되는 접근할 수 속성이 있습니다. <code class="language-html highlighter-rouge">private</code>로 속성이 정해저 있는 경우 접근을 제한 받을 수 있습니다.
+접근이 가능하기 위해서는 <code class="language-html highlighter-rouge">public</code> 또는 <code class="language-html highlighter-rouge">protected</code>로 정의해야 합니다.</p>
+
+<h3 id="오버라이딩">오버라이딩</h3>
+<hr />
+<p>매서드 재정의를 할 수 있습니다.</p>
+
+<h3 id="다형성-ploymorphism">다형성 (ploymorphism)</h3>
+<hr />
+
+<p>많다(ploy) + 형태(morphism)의 결합니다.</p>
+
+<p>다형성은 동적 바인딩을 처리 하게 됩니다.</p>
+
+<p>따라서 코드가 실행시에 어떤 메서드가 호출이 되는지를 결정합니다.</p>
+
+<p>다형성은 부모 클래스의 메서드가 자식 클래스에서 재정의 될 확율이 높을 경우 가상메서드를 처리합니다.</p>
+
+<p>다향성을 처리하기 위해서 메소드 테이블을 가지게 됩니다. 이를 통하여 다양성 있는 코드를 생성할 수 있습니다.</p>
+
+<p>다양성은 오버해드가 크다. 잘못된 의도의 결과가 출력될 수 있습니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="kd">class</span> <span class="nc">Bar</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">method1</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"method1 </span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">method2</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">method2</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"method2 </span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Foo</span> <span class="k">extends</span> <span class="nx">Bar</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">method2</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"hello </span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">;</span>
+<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">method1</span><span class="p">();</span>
+</code></pre></div></div>
+<p>부모클레스 <code class="language-html highlighter-rouge">method1()</code>은 <code class="language-html highlighter-rouge">method2()</code>를 호출하여 결과를 출력할려고 했지만, 상속받은 자식이 <code class="language-html highlighter-rouge">method2()</code> 오버라이딩을 통하여 <code class="language-html highlighter-rouge">method1()</code>이 처음에 워하는 메시지가 출력되지 안습니다.
+다향성으로 인하여 결과가 다르게 나올 수도 있습니다.</p>
+
+<p>다형성을 이해하는데 필요한 것이 추상클래스와 추상매서드
+추상메서드는 매서드의 원형(prototype)만 제공합니다.</p>
+
+<p>추상클래스는 직접 인스턴스를 생성을 할 수 없습니다. 구체적인 메서드의 내용이 없기 때문입니다.</p>
+
+<p>UML에서 추상매소드와 추상클래스는 이텔릭체 형태로 기울어진 이름명으로 처리합니다.</p>
+
+<h3 id="다중상속-multiple-inheritance">다중상속 (multiple inheritance)</h3>
+<hr />
+
+<p>다중상속이 가능하지만, 사용을 추천하지는 않습니다. 다중상속을 할 경우 여러 문제점이 발생될 수 있습니다.</p>
+
+<p>다중상속이라는 것은 여러 부모클래스로 부터 상속이 이루어 지는 것을 말합니다.</p>
+
+<p>하지만 그 부모의 클래스의 상위 조상이 공통된 경우에는 문제가 발생합니다.</p>
+
+
+            </section>            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><ul class="list-group">
+    <li class="list-group-item"><a href="/object">객체지향</a></li>
+    <li class="list-group-item"><a href="/class">클래스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/pattern">디자인패턴</a></li>
+    <li class="list-group-item">리팩토링</li>
+</ul>
+
+<br>
+</aside>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        <footer>  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer></footer>  
+        
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160048106-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-160048106-1');
+        </script>
+
+    </body>
+
+</html>

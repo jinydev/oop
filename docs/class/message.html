@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>JinyDev | 객체지향 프로그래밍</title>
+            <meta name="title" content="객체지향 프로그래밍" /><meta name="keyword" content="jinyphp, php, 객체지향, oop, class" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">JinyDev</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/php">PHP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mysql.jiny.dev">Mysql</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://git.jiny.dev">Git</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav><br>
+
+<div class="container">
+    <nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--></ol>    
+</nav></nav>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h3 id="메시지message">메시지(message)</h3>
+<hr />
+
+<p>객체지향 프로그램은 클래스를 기반의 객체를 생성하여 서로 유기적으로 협업을 하면서 동작을 하는 개발방식입니다.</p>
+
+<p>따라서 객체는 하나만으로는 의미가 없습니다. 여러 객체들과 대화를 하면서 동작을 처리해야 하기 때문입니다.</p>
+
+<p>이렇게 여러 객체가 존재할때, 객체간의 대화하는 것을 메시지 보내기 라고 합니다.</p>
+
+<h3 id="메세지의-의미">메세지의 의미</h3>
+<hr />
+<p>메시지는 객체가 상호 작용을 하기 위해서 다른 객체에 접근을 하는 방법을 말하는 것입니다.</p>
+
+<p>이전 절차지향적인 개발 방식은 함수에서 다른 함수를 호출하는 형태로 동작을 하였습니다. 하지만, 객체지향에서는 함수들은 메서드 형태로 객체 내부로 캐슐화가 되어 있게 됩니다.
+따라서 직접적인 호출이 아닌 객체를 통하여 호출하는 형태로 변경이 되었습니다.</p>
+
+<h3 id="전송객체">전송객체</h3>
+<hr />
+<p>전송객체란 하나의 객체가 다른 객체의 메서드를 호출하는 것을 말합니다. 즉, 전송객체는 자신의 처리 동작을 위해서 기능을 포함하고 있는 다른 객체를 호출하여 사용을 하는 것을 말합니다.</p>
+
+<h3 id="수신객체">수신객체</h3>
+<hr />
+<p>전송 객체로 부터 호출되는 객체를 수신 객체라고 합니다.
+수신객체는 요청한 동작을 처리하고, 이와 관련된 결과값을 반환하게 됩니다. 또는 다른 객체를 재호출 하여 전송객체가 될 수도 있습니다.</p>
+
+<p>객체의 대화</p>
+
+<p>객체지향 프로그래밍
+객체지향은 절차적 프로그래밍과 달리 객체를 생성하고 객체간의 호출과 처리를 위임하는 대화를 합니다.</p>
+
+<p>대화식 프로그램 방식은 절차적 방식과 프로그램을 작성하는 방법이 차이가 있습니다.</p>
+
+<p>대화하는법
+우리가 객체를 학습하였습니다. 이는 우리가 말을 하는 방법에 대해서 배운 것입니다.</p>
+
+<p>말을 잘 할여면 대화하는 방법도 배원야하고. 예의적으로 잘 말하는 방법에 대해서도 알아야 합니다.</p>
+
+<p>객체지향 프로그램에서 말을 잘하는 방법은 디자인 패턴이라 할 수 있습니다.</p>
+
+
+            </section>            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><ul class="list-group">
+    <li class="list-group-item"><a href="/object">객체지향</a></li>
+    <li class="list-group-item"><a href="/class">클래스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/pattern">디자인패턴</a></li>
+    <li class="list-group-item">리팩토링</li>
+</ul>
+
+<br>
+</aside>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        <footer>  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer></footer>  
+        
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160048106-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-160048106-1');
+        </script>
+
+    </body>
+
+</html>

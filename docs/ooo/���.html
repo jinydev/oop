@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>JinyDev | 객체지향 프로그래밍</title>
+            <meta name="title" content="객체지향 프로그래밍" /><meta name="keyword" content="jinyphp, php, 객체지향, oop, class" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">JinyDev</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/php">PHP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mysql.jiny.dev">Mysql</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://git.jiny.dev">Git</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav><br>
+
+<div class="container">
+    <nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--></ol>    
+</nav></nav>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h1 id="상속">상속</h1>
+<p>객체지향의 코드의 강점은 재사용 입니다.</p>
+
+<p>재사용을 향상하기 위해서 등장한 것이 상속(Inheritance) 입니다.</p>
+
+<p>중복된 코드를 분히아여 상위 클래스에 정의 합니다. 그리고 이를 상속을 통하여 하위 클래스에서 사용을 하도록 하는 것입니다.</p>
+
+<h2 id="접근방식">접근방식</h2>
+<p>상속 표현의 접근방식에 따라서 일반화와 특수화로 구분을 합니다.</p>
+
+<h3 id="일반화">일반화</h3>
+<p>일반화(Generalization)은 bottom-up 방식의 상속 기법입니다.</p>
+
+<h3 id="특수화">특수화</h3>
+<p>특수화(Specialization)은 top-down 방식의 상속 기법입니다.</p>
+
+<h2 id="is-a-관계">is-A 관계</h2>
+<p>상속을 is-A 관계라고 말합니다.
+is-A는 상속 관계에서 서브 클래스에서 상위 클래스로 향한 관계를 말합니다. bottom-up의 일반화 기법입니다.</p>
+
+<p>프로그래밍에서 업케스팅(upcasting)이라고 부르기도 합니다.</p>
+
+<h3 id="대체성">대체성</h3>
+<p>또는 대체성(subsitutability) 특징 이라고 합니다.
+대체성은 상속 관계에서 서브 클래스가 대체가 되서 사용이 가능하다는 것을 말합니다.</p>
+
+<h2 id="다중상속">다중상속</h2>
+<p>두개 이상의 상위 클래스를 상속받는 것을 다중 상속이라고 합니다.</p>
+
+<p>다중 상속은 문제가 발생할 수 있습니다.
+상속시 발생되는 이름 충돌(naming confliction)입니다.</p>
+
+<p>충돌 발생시 어느 부모의 함수인지를 충돌을 확인해야 합니다.</p>
+
+<p>이러한 점에서 다중 상속은 잘 사용을 하지 않습니다.</p>
+
+<h2 id="특징">특징</h2>
+
+<h3 id="중복을-제거합니다">중복을 제거합니다.</h3>
+
+<h3 id="새로운-추가가-용이-합니다">새로운 추가가 용이 합니다.</h3>
+<p>상위 클래스에 의존을 하지만, 새로운 데이터나 함수를 쉽게 추가할 수 있습니다.</p>
+
+<h3 id="계층-추가">계층 추가</h3>
+<p>상속 관계를 사용하면, 계층 구조로 쉽게 하위 클래스를 추가할 수 있습니다.</p>
+
+<h2 id="uml">UML</h2>
+
+<p>삼각 화살표를 이용하여 상속 관계를 표현을 합니다.</p>
+
+<h2 id="상속구현">상속구현</h2>
+<p>상속 코드를 작성할때 <code class="language-html highlighter-rouge">extends</code> 키워드를 사용하여 상속을 적용합니다.</p>
+
+<p>상속시 서브 클래스의 매소드는 오버라이딩(overriding)을 통하여 다른 로직으로 대체 구현이 가능합니다.</p>
+
+<h2 id="업케스팅">업케스팅</h2>
+<p>자식 클래스가 무모 클래스를 대치함</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code>a1 = new B;
+a2 = new C;
+</code></pre></div></div>
+
+<h2 id="다운-케스팅">다운 케스팅</h2>
+<p>부모 클래스가 자식 클래스를 대치함. 실행시 오류가 발생함.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code>a1 = (b)new A();
+a1 = (c)new A();
+</code></pre></div></div>
+
+<h1 id="오보라이드">오보라이드</h1>
+<p>상속받은 메소드를 오버라이드 하는 것은, 처음부터 클래스가 추상화 작업이 덜 되어 있다는 의미일 수 있습니다.
+모든 서브 클래스에서 공유가 가능하도록 만드는 것이 중요 합니다.</p>
+
+
+            </section>            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><ul class="list-group">
+    <li class="list-group-item"><a href="/object">객체지향</a></li>
+    <li class="list-group-item"><a href="/class">클래스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/pattern">디자인패턴</a></li>
+    <li class="list-group-item">리팩토링</li>
+</ul>
+
+<br>
+</aside>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        <footer>  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer></footer>  
+        
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160048106-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-160048106-1');
+        </script>
+
+    </body>
+
+</html>

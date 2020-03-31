@@ -1,3 +1,9 @@
+---
+layout: page
+title: "객체지향 프로그래밍"
+keyword: "jinyphp, php, 객체지향, oop, class"
+---
+
 ### PHP 객체지향 프로그래밍
 ---
 * [개발방법](./develop)
