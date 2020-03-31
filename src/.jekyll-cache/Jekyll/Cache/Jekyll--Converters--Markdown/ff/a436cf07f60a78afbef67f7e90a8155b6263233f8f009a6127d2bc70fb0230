@@ -1,0 +1,20 @@
+I"4<h1 id="매직-메서드masic-method">매직 메서드(Masic Method)</h1>
+<hr />
+
+<p>클래스는 매직 메서드라는 몇 개의 미리 사전에 정의한 특수한 메서드가 있습니다. 클래스를 생성할 때 초기값을 설정하거나 오류 동작 등 실행되는 특별한 메서드입니다.</p>
+
+<ul>
+  <li><a href="construct">초기화</a> (__construct)</li>
+  <li><a href="destruct">소멸자</a> (__destruct)</li>
+  <li><a href="call">call</a></li>
+  <li><a href="tostring">객체의 문자열 변환</a></li>
+  <li><a href="invoke">객체 함수 호출</a></li>
+  <li><a href="clone">객체 복제 호출</a></li>
+  <li><a href="set">set</a></li>
+  <li>__<a href="callstatic">callStatic</a>() : 정적 컨텍스트 내에서 접근 불가 메서드를 가져올 때 호출됩니다.</li>
+  <li>__sleep()</li>
+  <li>__wakeup()</li>
+  <li>__set_state() : var_export()에 의해 내보내진 클래스를 위해 호출됩니다.</li>
+  <li>__debugInfo() : var_dump()에 의해 덤프될 때 보여줄 속성을 가져올 때 호출됩니다.</li>
+</ul>
+:ET

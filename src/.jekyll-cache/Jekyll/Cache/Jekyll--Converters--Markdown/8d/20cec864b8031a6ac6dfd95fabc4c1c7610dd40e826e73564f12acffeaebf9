@@ -1,0 +1,55 @@
+I"�	<h1 id="일급객체">일급객체</h1>
+<hr />
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">class</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">hello</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"hello"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">hello</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h1 id="일급객체-1">일급객체</h1>
+
+<p>일급함수
+함수를 객체처럼 다룬다.
+프로그래밍 언어에서 함수를 값으로 다룰 수 있는 것을 일급함수라 말합니다.</p>
+
+<p>이러한 개념은 자바스크립트와 같은 언어에서 자주 접할 수 있습니다.</p>
+
+<p>일급객체</p>
+
+<p>일급객체(First class citizens)는 언어에서 다른 객체들에게도 적용이 가능한 연산을 지원하는 객체를 의미합니다.</p>
+
+<p>여기 연산이란 매수변수를 전달한다거나 변수에 대입을 하는 등과 같은 것을 말합니다. 즉, 함수이면서도 클래스 적인 성질을 가지고 있거나, 또는 클래스 이면서 함수적인 성질을 가진 객체를 의미 합니다.</p>
+
+<p>객체는 일급객체와 이급객체로 구별을 합니다. 이러한 구분의 개념은 영국의 컴퓨터 과학자 크리스토퍼 스트레이치에 의해 처음 소개 되었습니다.</p>
+
+<p>다음과 같은 조건을 만족할 때 일급 객체라고 말할 수 있다.
+•	변수나 데이터 구조안에 담을 수 있다.
+•	파라미터로 전달 할 수 있다.
+•	반환값(return value)으로 사용할 수 있다.
+•	할당에 사용된 이름과 관계없이 고유한 구별이 가능하다.
+•	동적으로 프로퍼티 할당이 가능하다.</p>
+
+<p>일급객체 조건</p>
+
+<ul>
+  <li>파리미터로 전달할 수 있다.</li>
+  <li>반환값으로 사용할 수 있다.</li>
+  <li>고유한 구별이 가능하다.</li>
+  <li>동적으로 프로퍼티 할당이 가능하다.</li>
+</ul>
+
+<p>변수나 데이터 구조를 안에 담을 수 있다.
+변수에 익명 클래스를 담아 사용할 수 있습니다.</p>
+
+<p>응용
+커멘드 디자인 패턴의 command는 일급객체에 해당합니다.</p>
+
+:ET

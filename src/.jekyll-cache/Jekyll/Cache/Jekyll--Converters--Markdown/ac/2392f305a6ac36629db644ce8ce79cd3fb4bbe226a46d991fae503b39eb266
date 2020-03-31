@@ -1,0 +1,5 @@
+I"�<h1 id="__debuginfo">__debugInfo()</h1>
+<hr />
+
+<p>var_dump()에 의해 덤프될 때 보여줄 속성을 가져올 때 호출됩니다.</p>
+:ET

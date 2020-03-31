@@ -1,0 +1,31 @@
+I"�<h1 id="객체-복제-호출">객체 복제 호출</h1>
+<hr />
+
+<p><code class="language-html highlighter-rouge">__clone()</code> 매직 메소드는 객체가 복제 되었을 때 실행회는 메서드입니다.</p>
+
+<p>예제파일) class-17.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+    <span class="kd">class</span> <span class="nc">MyClass</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="nv">$instance</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__clone</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s2">"clone object&lt;br&gt;"</span><span class="p">;</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+        
+    <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyClass</span><span class="p">();</span>
+
+    <span class="nv">$obj2</span> <span class="o">=</span> <span class="k">clone</span> <span class="nv">$obj</span><span class="p">;</span>
+
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>화면출력)</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code>clone object
+</code></pre></div></div>
+
+<p><br /><br /></p>
+:ET

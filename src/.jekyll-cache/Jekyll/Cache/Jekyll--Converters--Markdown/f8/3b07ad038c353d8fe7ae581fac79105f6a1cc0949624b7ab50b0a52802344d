@@ -1,0 +1,27 @@
+I"�<h1 id="객체-함수-호출">객체 함수 호출</h1>
+<hr />
+
+<p>__invoke() 매직 메서드는 객체를 함수처럼 호출할 경우에 호출되는 메서드 입니다. $obj() 형태로 호출될 때 실행됩니다.</p>
+
+<p>예제파일) class-16.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+	<span class="kd">class</span> <span class="nc">dataInt</span>
+	<span class="p">{</span>
+    		<span class="k">public</span> <span class="k">function</span> <span class="nf">__invoke</span><span class="p">(</span><span class="nv">$x</span><span class="p">)</span>
+    		<span class="p">{</span>
+        			<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
+    		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">dataInt</span><span class="p">;</span>
+
+	<span class="nv">$obj</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+	
+	<span class="nb">var_dump</span><span class="p">(</span><span class="nb">is_callable</span><span class="p">(</span><span class="nv">$obj</span><span class="p">));</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>화면출력)</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code>int(5) bool(true)
+</code></pre></div></div>
+:ET

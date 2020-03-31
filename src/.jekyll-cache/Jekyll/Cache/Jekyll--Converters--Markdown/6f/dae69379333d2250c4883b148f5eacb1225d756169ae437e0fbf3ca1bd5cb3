@@ -1,0 +1,33 @@
+I"d<h1 id="객체의-문자열-변환">객체의 문자열 변환</h1>
+<hr />
+
+<p>__toString() 매직 매서드는 클래스가 문자열로 변환하여 처리될 때 동작합니다. 예로 클래스 객체를 echo $obj;처럼 출력할 때 __toString() 메서드가 동작합니다.</p>
+
+<p>예재 파일 class-15.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="kd">class</span> <span class="nc">TestClass</span>
+<span class="p">{</span>
+	<span class="k">public</span> <span class="nv">$foo</span><span class="p">;</span>
+
+	<span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$foo</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">foo</span> <span class="o">=</span> <span class="nv">$foo</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">public</span> <span class="k">function</span> <span class="nf">__toString</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">foo</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TestClass</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">);</span>
+
+<span class="c1">// 클래스가 문자열로 변환 </span>
+<span class="k">echo</span> <span class="nv">$obj</span><span class="p">;</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code>Hello
+</code></pre></div></div>
+:ET

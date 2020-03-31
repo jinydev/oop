@@ -1,0 +1,64 @@
+I"s	<h1 id="클래스">클래스</h1>
+<hr />
+
+<p>클래스는 기존 함수형 프로그램 코딩 개발 방법보다 향상된 객체지향형 프로그램 개발 방법론 및 환경을 지원합니다. PHP도 다양한 객체지향 방법론을 도입하여 최신 트렌드에 맞는 클래스 및 코딩 방법을 제공합니다.</p>
+
+<p><br /></p>
+
+<h2 id="클래스의-종류">클래스의 종류</h2>
+<hr />
+
+<ul>
+  <li>클래스</li>
+  <li><a href="14.6">정적 클래스</a></li>
+  <li><a href="14.7">익명 클래스</a></li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="선언과-생성">선언과 생성</h2>
+<hr />
+
+<ul>
+  <li><a href="14.1">클래스와 객체</a></li>
+  <li><a href="14.2">클래스 &amp; 인스턴스</a></li>
+  <li><a href="14.3">클래스 선언</a></li>
+  <li><a href="14.4">인스턴스 생성</a></li>
+  <li>
+    <p><a href="14.5">객체 접근</a></p>
+  </li>
+  <li>
+    <p><a href="const">상수</a></p>
+  </li>
+  <li><a href="instance">인스턴스</a></li>
+  <li><a href="message">메시지</a></li>
+</ul>
+
+<h3 id="가시성-visibility">가시성 (visibility)</h3>
+<ul>
+  <li><a href="visibility">가시성</a>
+<br /></li>
+</ul>
+
+<h2 id="매직메서드">매직메서드</h2>
+<hr />
+
+<p>클래스는 매직 메서드라는 몇 개의 미리 사전에 정의한 특수한 메서드가 있습니다. 클래스를 생성할 때 초기값을 설정하거나 오류 동작 등 실행되는 특별한 메서드입니다.</p>
+
+<ul>
+  <li><a href="magic/construct">초기화</a> (__construct)</li>
+  <li><a href="magic/destruct">소멸자</a> (__destruct)</li>
+  <li><a href="magic/call">call</a></li>
+  <li><a href="magic/tostring">객체의 문자열 변환</a></li>
+  <li><a href="magic/invoke">객체 함수 호출</a></li>
+  <li><a href="magic/clone">객체 복제 호출</a></li>
+  <li><a href="magic/set">set</a></li>
+  <li>__<a href="magic/callstatic">callStatic</a>() : 정적 컨텍스트 내에서 접근 불가 메서드를 가져올 때 호출됩니다.</li>
+  <li><a href="magic/sleep">sleep</a> __sleep()</li>
+  <li><a href="magic/wakeup">wakeup</a> __wakeup()</li>
+  <li><a href="magic/set_srate">set_state</a> __set_state() : var_export()에 의해 내보내진 클래스를 위해 호출됩니다.</li>
+  <li><a href="magic/debuginfo">debugInfo</a> __debugInfo() : var_dump()에 의해 덤프될 때 보여줄 속성을 가져올 때 호출됩니다.</li>
+</ul>
+
+<p><br /><br /></p>
+:ET

@@ -1,0 +1,169 @@
+I"�(<p>디자인 패턴을 학습하기 먼저, PHP의 인터페이스 기능에 대해서 다시 한번 복습해보도록 하겠습니다. 객체지향 디자인패턴을 학습을 하기 위해서는 기본적인 PHP코드를 잘 숙지하고 있어야 합니다.</p>
+
+<h3 id="인터페이스">인터페이스</h3>
+<hr />
+
+<p>인터페이스는 두개의 물건 있을 경우 상호간의 연결을 정의한 규격을 말합니다. 예를들면 컴퓨터에서 키보드, 마우스, 프린터, 스케너등 연결하면서 서로 통신을 하는 규약을 정의해 놓은 것들을 인터페이스라고 할 수 있습니다.</p>
+
+<p>프로그램을 코딩작성 할때도 인터페이스라는 용어가 등장을 합니다. 주로, 클래스의 객체를 생성하고 연결할때 인터페이스라는 개념을 같이 사용을 하고 있습니다. 
+인터페이스는 PHP, Java, C#, C++등 다양한 언어에서도 이와 같은 개념과 코드를 같이 작성하여 사용을 합니다.</p>
+
+<p><br /></p>
+
+<h3 id="도입">도입</h3>
+<hr />
+<p>객체지향 프로그램 코드를 생성하는데 있어서 인터페이스는 두개의 클래스 객체를 연결하는 접점을 말합니다.
+이렇게 프로그래밍에서 인터페이스를 사용하는 이유는 객체를 생성하는데 있어서 기능 부분과 선언 부분을 분리하기 위함입니다.</p>
+
+<p>PHP언어에서 제공되는 인터페이스를 사용하면 클래스 객체의 선언부와 그 객체의 기능을 구현하는 것을 실체코드를 분리를 할 수 있게 됩니다.
+이는 클래스를 생성할때 선언 처리하는 파일을 만들고, 이를 통하여 구현되는 파일을 별도로 생성을 한다는 의미입니다.</p>
+
+<p>이처럼 인터페이스는 기능들이 통로라고 할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h3 id="기본실습">기본실습</h3>
+<hr />
+<p>실제 코드를 통하여 인터페이스의 동작을 이해해 보도록 하겠습니다.</p>
+
+<p>한개의 프로젝트를 여러 개발자와 함께 협헙하여 기능을 만들기로 하였습니다. 또한 클래스를 통하여 각각의 코드를 작성함에 있어서 서로 규칙을 만들었습니다. 모든 클래스 안에는 <code class="language-html highlighter-rouge">index()</code> 매서드를 만들고 이를 호출하기로 정하였습니다.</p>
+
+<p>우리는 서로 공통된 모양의 클래스를 생성하기 위해서 규약을 인터페이스로 만들어 적용을 할 수 있습니다.</p>
+
+<p>interface.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+<span class="kd">interface</span> <span class="nc">controller</span> 
+<span class="p">{</span>
+    <span class="c1">// 인터페이스를 통하여 index에 대한 선언을 합니다.</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">();</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>인터페이스를 생성할때는 <code class="language-html highlighter-rouge">interface</code>라는 키워드를 위와 같이 작성합니다. 또한, 메소드는 실제코드를 작성하지 않습니다. 메소드의 선언만 하게 됩니다.</p>
+
+<p>먼저 개발자 A가 <code class="language-html highlighter-rouge">index()</code> 메소드가 포함된 A클래스를 생성할려고 합니다. 
+이렇게 선언한 인터페이스 규격을 클레스에 적용을 합니다.</p>
+
+<p>classA.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kd">class</span> <span class="nc">foo</span> <span class="k">implements</span> <span class="nx">controller</span> 
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"hello A"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>A클래스에는 인터페이스를 적용하여 실제 코드를 구현하게 됩니다. 구현되는 클래스에 미리 정의한 인터페이스를 적용하는 방법은 <code class="language-html highlighter-rouge">implements</code>라는 키워드를 사용합니다.
+그리고 그 다음에 적용할 인터페이스의 이름을 쓰면 됩니다.</p>
+
+<p>개발자 B는 <code class="language-html highlighter-rouge">index()</code>라는 매소드가 포함된 B클래스 생성합니다.</p>
+
+<p>classB.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+<span class="kd">class</span> <span class="nc">bar</span> <span class="k">implements</span> <span class="nx">controller</span> 
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">"hello B"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이렇게 인터페이스와 클래스로 구현한 객체를 생성하여 출력해 보도록 합니다.</p>
+
+<p>index.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+
+    <span class="k">require_once</span><span class="p">(</span><span class="s2">"interface.php"</span><span class="p">);</span>
+    <span class="k">require_once</span><span class="p">(</span><span class="s2">"classA.php"</span><span class="p">);</span>
+    <span class="k">require_once</span><span class="p">(</span><span class="s2">"classB.php"</span><span class="p">);</span>
+
+    <span class="nv">$A</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">foo</span><span class="p">;</span>
+
+    <span class="c1">// 인터페이스는 기능A를 구현하는 통로역할을 합니다.</span>
+    <span class="c1">// 인터페이스는 선언과 기능을 구현하는 것을 분리하는 역할을 합니다.</span>
+    <span class="nv">$A</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">();</span>
+
+    <span class="nv">$B</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">foo</span><span class="p">;</span>
+
+    <span class="c1">// 인터페이스는 기능B를 구현하는 통로역할을 합니다.</span>
+    <span class="c1">// 인터페이스는 선언과 기능을 구현하는 것을 분리하는 역할을 합니다.</span>
+    <span class="nv">$B</span><span class="o">-&gt;</span><span class="na">index</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>이처럼 A클래스와 B클래스는 하나의 인터페이스를 적용하여 공통된 메소드를 코드를 생성할 수 있습니다.</p>
+
+<p>인터페이스의 선언위치
+선언한 인터페이스를 클래스에 적용을 하이 위해서는 클래스 선언 보다 먼저 되어 있어야 합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">include</span> <span class="s2">"interface.php"</span><span class="p">;</span>
+<span class="k">include</span> <span class="s2">"class.php"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>정상적으로 동작을 합니다.
+반면에 인터페이스보다 먼저 class를 인클루드 하여 사용을 하면 인터페이스 오류가 발생을 합니다.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="k">include</span> <span class="s2">"class.php"</span><span class="p">;</span>
+<span class="k">include</span> <span class="s2">"interface.php"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="복수-인터페이스">복수 인터페이스</h2>
+<p>자바는 복수의 인터페이스를 구현할 수 있습니다.</p>
+
+<h1 id="인터페이스-1">인터페이스</h1>
+
+<p>의사소통의 방법을 정하는것</p>
+
+<p>객체들은 서로 의사소통을 필요할때 인터페이스를 사용합니다.
+인터페이스는 사전에 미리 정의를 합니다.</p>
+
+<p>소프트웨어에서의 인터페이스는 함수들의 집합을 의미합니다.</p>
+
+<p>인터페이스가 잘 정의가 되면, 기능을 분리할 수 있습니다.
+분리를 통하여 동작의 재사용성이 증가 됩니다.</p>
+
+<h2 id="서비스-명세">서비스 명세</h2>
+<p>인터페이스는 하드웨어 에서는 흔히 사용하는 기법입니다.</p>
+
+<p>소프트웨어에서는 함수들의 선언 집합.</p>
+
+<h2 id="상속불가">상속불가</h2>
+<p>인터페이스는 상속이 관계를 설정할 수 없습니다.</p>
+
+<p>함수의 선언만 정의 합니다.
+함수에 대한 구현 부분은 존재하지 않습니다.
+외부에서 접근이 가능 하도록 public 으로 설정합니다.</p>
+
+<p>객체생성 불가
+인터페이스 만으로는 객체를 생성할 수 없습니다.
+이는 구현 부분이 없기 때문입니다.</p>
+
+<p>변수포함 불가
+인터페이스 내부에는 상태값을 위한 변수를 추가할 수 없습니다.
+대신에 상수는 정의가 가능합니다.</p>
+
+<p>분리
+인터페이스는 소프트웨어 공학에서 이야기 하는 관심 분리 (Separate of concern)원칙을 적용한 것입니다.</p>
+
+<h2 id="uml">UML</h2>
+<p>인퍼페이스는 <code class="language-html highlighter-rouge"><span class="nt">&lt;</span><span class="err">&lt;</span> <span class="nt">&gt;</span>&gt;</code> 스트레오 타입을 이용하여 표기를 합니다.</p>
+
+<h2 id="간접호출">간접호출</h2>
+<p>인터페이스를 이용하여 간접 호출을 합니다. 구현된 클래스를 직접 호출하지 않습니다.</p>
+
+<p>이는 인터페이스를 이용하여 여러 구현체를 만들 수 있는 장점입니다.</p>
+
+<h2 id="구현">구현</h2>
+<p>인터페이스는 <code class="language-html highlighter-rouge">interface</code> 키워드를 이용하여 정의 합니다.
+그리고 인터페이스로 정의된 메소드들은 모두 구현을 해야 합니다.</p>
+
+<p>만일 구현이 되어 있지 않으면 오류가 발생이 됩니다.</p>
+
+:ET

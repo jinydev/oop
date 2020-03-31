@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--SEO--><title>JinyDev | Magic Method</title>
+            <meta name="title" content="Magic Method" /><meta name="description" content="모던PHP는 최신 트랜드의 객체지향 프로그래밍을 활용합니다." /><meta name="keyword" content="jinyphp, php, 객체지향, oop, class" /><!--부트스트랩4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+            img {
+                max-width:100%;
+            }
+        </style>
+
+        <link rel="stylesheet" href="/assets/highlight.css">
+        <link rel="stylesheet" href="/assets/style.css">
+
+        <script data-ad-client="ca-pub-3321560028329475" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+    </head>
+    <body>
+        <!--네비게이션--><!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">JinyDev</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/php">PHP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mysql.jiny.dev">Mysql</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://git.jiny.dev">Git</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav><br>
+
+<div class="container">
+    <nav><nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <!--breadcrumb loop--><li class="breadcrumb-item "><a href="../">class</a></li><li class="breadcrumb-item "><a href="../">Masic Method</a></li><li class="breadcrumb-item active">call</li></ol>    
+</nav></nav>
+</div>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-9">
+            <section>
+                <h1 id="오류-호출__call">오류 호출(__call)</h1>
+<hr />
+
+<p>매서드를 사용하기 위해서는 반드시 클래스 내에 매서드 함수를 정의해야 합니다. 하지만 정의되지 않는 클래스를 사용하려고 하면 당연히 오류가 발생할 것입니다. 공동 작업이나 소스가 커질수록 이러한 오류가 발생할 확률도 커집니다.</p>
+
+<p>만일 클래스 내에서 존재하지 않는 메서드를 호출할 때 오류를 발생하지 않고 __call() 메서드를 호출합니다.</p>
+
+<p>예제 파일 class-### 14.php</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="syntax"><code><span class="cp">&lt;?php</span>
+	<span class="kd">class</span> <span class="nc">BaseClass</span>
+	<span class="p">{</span>
+		<span class="k">function</span> <span class="nf">__call</span><span class="p">(</span><span class="nv">$method</span><span class="p">,</span><span class="nv">$params</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">echo</span> <span class="s2">"오류: 정의되지 않는 메서드 "</span><span class="o">.</span><span class="nv">$method</span><span class="o">.</span><span class="s2">"를 "</span><span class="o">.</span><span class="nb">implode</span><span class="p">(</span><span class="s1">', '</span><span class="p">,</span> <span class="nv">$params</span><span class="p">)</span><span class="o">.</span><span class="s2">"호출했습니다."</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="c1">// 인스턴스 생성</span>
+	<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BaseClass</span><span class="p">();</span>
+	<span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">show</span><span class="p">(</span><span class="s2">"a1"</span><span class="p">,</span><span class="s2">"a2"</span><span class="p">,</span><span class="s2">"a3"</span><span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>결과</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="syntax"><code>오류: 정의되지 않는 메서드 show를 a1, a2, a3호출했습니다.
+</code></pre></div></div>
+
+<p>위의 예제 에서는 없는 메서드를 호출합니다. 없는 메서드를 호출하게 되면 대신에 __call() 매직 메서드를 호출합니다. __call() 함수는 두 개의 인자를 받습니다. 호출한 메서드명과 입력받은 파라미터 값을 배열로 전달합니다.</p>
+
+<p>매직 메서드를 잘 이용하면 공동 작업 시 잘못된 메서드의 호출로 인하여 발생할 수 있는 오류를 사전에 방지할 수 있습니다.</p>
+
+<p><br /><br /></p>
+
+            </section>            
+        </div>
+
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+            <aside><ul class="list-group">
+    <li class="list-group-item"><a href="/object">객체지향</a></li>
+    <li class="list-group-item"><a href="/class">클래스</a></li>
+</ul>
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="/pattern">디자인패턴</a></li>
+    <li class="list-group-item">리팩토링</li>
+</ul>
+
+<br>
+</aside>
+            
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+        <footer>  <!-- Footer -->
+  <footer class="py-3 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; jinydev 2017~2020</p>
+    </div>
+    <!-- /.container -->
+  </footer></footer>  
+        
+        <!--부트스트랩4-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160048106-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-160048106-1');
+        </script>
+
+    </body>
+
+</html>
